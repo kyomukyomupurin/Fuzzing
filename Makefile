@@ -13,9 +13,9 @@ gen: gen.cc
 .PHONY: clean
 
 clean:
-	-rm sol
-	-rm stupid
-	-rm gen
-	-rm sol.txt &> /dev/null
-	-rm stupid.txt &> /dev/null
-	-rm gen.txt
+	-rm -f sol
+	-rm -f stupid
+	-rm -f gen
+	-rm -f sol.txt
+	-rm -f stupid.txt
+	-rm -f gen.txt
