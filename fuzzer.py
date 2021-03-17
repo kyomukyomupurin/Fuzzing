@@ -11,15 +11,15 @@ def fuzz():
     if sol_out != stupid_out:
         print("[test {:<3}] : NG".format(i + 1))
 
-        Path("sol.txt").open("w").write(sol_out.decode("utf-8"))
-        Path("stupid.txt").open("w").write(stupid_out.decode("utf-8"))
+        Path("sol.txt").write_text(sol_out.decode("utf-8"))
+        Path("stupid.txt").write_text(stupid_out.decode("utf-8"))
 
         print("Input : ")
-        subprocess.run(["cat", "gen.txt"])
+        print(Path("gen.txt").read_text())
         print("Expected : ")
-        subprocess.run(["cat", "stupid.txt"])
+        print(Path("stupid.txt").read_text())
         print("Found : ")
-        subprocess.run(["cat", "sol.txt"])
+        print(Path("sol.txt").read_text())
 
         exit(0)
     else:
